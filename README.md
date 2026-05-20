@@ -45,3 +45,13 @@ A sequential CNN with three convolutional blocks followed by fully connected lay
 | Dense | 64 units, ReLU |
 | Dropout | 0.5 |
 | Dense (output) | 10 units, Softmax |
+
+## Requirements
+
+```
+tensorflow
+keras
+numpy
+matplotlib
+pandas
+```
