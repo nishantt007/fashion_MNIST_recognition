@@ -19,3 +19,29 @@ Fashion MNIST consists of 70,000 grayscale images (28×28 pixels) split into:
 - **Metric:** Accuracy
 - **Epochs:** 20
 - **Validation:** Monitored each epoch; learning curves plotted via pandas/matplotlib
+
+## Output
+
+The trained model is saved in HDF5 format:
+```
+cnn_fashion_MNIST_model.h5
+```
+
+## Model Architecture
+
+A sequential CNN with three convolutional blocks followed by fully connected layers:
+
+| Layer | Details |
+|-------|---------|
+| Conv2D | 64 filters, 7×7 kernel, ReLU, same padding |
+| MaxPooling2D | 2×2 |
+| Conv2D × 2 | 128 filters, 3×3 kernel, ReLU, same padding |
+| MaxPooling2D | 2×2 |
+| Conv2D × 2 | 256 filters, 3×3 kernel, ReLU, same padding |
+| MaxPooling2D | 2×2 |
+| Flatten | — |
+| Dense | 128 units, ReLU |
+| Dropout | 0.5 |
+| Dense | 64 units, ReLU |
+| Dropout | 0.5 |
+| Dense (output) | 10 units, Softmax |
